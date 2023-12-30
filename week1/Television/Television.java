@@ -1,14 +1,11 @@
-package week1.Television;
-import java.util.Scanner;
-
 public class Television {
     private String brand;
     private String model;
     private int volume;
     private int channel;
-    private int lock;
+    private Integer lock;
     private boolean lockActive = false;
-    private static final Scanner SCAN = new Scanner(System.in);
+   
 
     public Television(String brand, String model){
         this.brand = brand;
@@ -39,8 +36,11 @@ public class Television {
     public void setChannel(int channel){
         this.channel = channel;
     }
-    public int getLock(){
+    public Integer getLock(){
         return this.lock;
+    }
+    public void setLock(Integer lock){
+        this.lock = lock;
     }
  
     public boolean getLockActive(){
@@ -49,6 +49,69 @@ public class Television {
     public void setLockActive(boolean active){
         this.lockActive = active;
     }
+
+    public String changeChannel(int channelNumber){
+        if(channelNumber < 1 || channelNumber > 75){
+            return "Ongeldige zender";
+        }
+        setChannel(channelNumber);
+        return "Naar zender: " + channelNumber;
+    }
+    public String ChangeVolume(int volume){
+        if(volume < 0 || volume > 100){
+            return "Ongeldige input";
+        }
+        setVolume(volume);
+        return "Volume naar: " + volume;
+    }
+    public String fastChange(String direction, String type) {
+        if ("volume".equals(type)) {
+            if ("plus".equals(direction) && getVolume() < 100) {
+                this.volume++;
+            } else if ("min".equals(direction) && getVolume() > 0) {
+                this.volume--;
+            } else {
+                return "Fout, probeer opnieuw";
+            }
+    
+        } else if ("channel".equals(type)) {
+            if ("plus".equals(direction) && getChannel() < 75) {
+                this.channel++;
+            } else if ("min".equals(direction) && getChannel() > 1) {
+                this.channel--;
+            } else {
+                return "Fout, probeer opnieuw";
+            }
+        }
+        return "Volume: " + getVolume() + "\nZender: " + getChannel();
+    }
+    public String changeLock(int oldLock, int newLock){
+        if(getLockActive()){
+            if(getLock() == oldLock){
+                setLock(newLock);
+                return "Kinderslot succesvol veranderd";
+            } else{
+                return "Verkeerde code probeer opnieuw";
+            }           
+        } else{
+            return "er is geen slot, maak er een aan";
+        }  
+    }
+
+    public String RemoveLock(int lock){
+        if(getLockActive()){
+            if(getLock() == lock){
+                setLock(null);
+                setLockActive(false);
+                return "Slot succesvol verwijderd";
+            } else{
+                return "Verkeerde code, probeer opnieuw";
+            }
+        } else{
+            return "Geen slot gevonden";
+        }
+    }
+    
     public void setChildLock(int lock){
         if(!getLockActive()){
             this.lock = validateLockLenght(lock);
@@ -61,7 +124,7 @@ public class Television {
     public int validateLockLenght(int lock){
         int validLenght = Integer.toString(Math.abs(lock)).length();
         if(validLenght != 4){
-            System.out.println("het kinderslot moet 4 cijfers bevatten, het kinderlok is nu 1111. Je kan deze later wijzigen");
+            System.out.println("het kinderslot moet 4 cijfers bevatten, het kinderslot is nu 1111. Je kan deze later wijzigen");
             setLockActive(true);
             return 1111;
         }
@@ -69,40 +132,20 @@ public class Television {
         return lock;
     }
 
+    
 
-    //Het onderstaande was mijn eerste versie, het was veels te ingewikkeld en werkte deels. 
-    // //controleer of het ingevoerde slot uit 4 cijfers bestaat, zoniet dan wordt het 0000, anders wordt het de ingevoede slot.
-    // public int validateLockLenght(int lock){
-    //     int validLenght = Integer.toString(Math.abs(lock)).length();
-    //     System.out.println(3);
-    //     if(validLenght < 4 || validLenght > 4){
-    //         System.out.println("Het slot moet uit 4 cijfers bestaan, het slot is nu 0000, deze kan je later wijzigen");
-    //         setLockActive(true); // 0000 is in deze casus een geaccepteerde code dus is het kinderslot daarmee actief.
-    //         return 1111;
-    //     } 
-    //     setLockActive(true);
-    //     return lock;
-    // }
 
-    // public int CheckLockActive(){
-    //     if(getLockActive()){
-    //         System.out.println(1);
-    //         int input = SCAN.nextInt();
-    //         if(input == getLock()){
-    //             System.out.println(2);
-    //             return validateLockLenght((lock));
-    //         } else{
-    //             System.out.println("Vekeerde code, probeer opnieuw");
-    //         }
-    //     } 
-    //     return validateLockLenght(lock);
-    // }
+
 
 
     public static void main(String[] args){
         Television tel = new Television("samsung", "x60p");
-        tel.setChildLock(555);
+        tel.setChildLock(5555);
+        System.out.println(tel.RemoveLock(5555));
 
-
+        System.out.println(tel.ChangeVolume(105));
+        System.out.println(tel.getVolume()); // null;
+        System.out.println(tel.ChangeVolume(55));
+        System.out.println(tel.getVolume()); //55
     }
 }
