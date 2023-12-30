@@ -114,13 +114,11 @@ public class Television {
         }
     }
     
-    public void setChildLock(int lock){
+    public String setChildLock(int lock){
         if(!getLockActive()){
             this.lock = validateLockLenght(lock);
-        } else{
-            System.out.println("Hte kinderslot is actief");
-            
-        }
+        } 
+        return "Het kinderslot is actief";
     }
 
     public int validateLockLenght(int lock){
@@ -133,12 +131,6 @@ public class Television {
         setLockActive(true);
         return lock;
     }
-
-    
-
-
-
-
 
     public static void main(String[] args){
         Television tel = new Television("samsung", "x60p");
