@@ -1,3 +1,5 @@
+package week1.Television;
+
 public class Television {
     private String brand;
     private String model;
