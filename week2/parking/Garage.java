@@ -77,24 +77,45 @@ public class Garage {
         }   
     }
 
+    public void outOfGarage(String lp){
+        Car temp = null;
+        for(Car c : cars){
+            if(lp.equals(c.getLisencePlate())){
+                System.out.println("Match");
+                temp = c;
+            }
+        }
+        this.cars.remove(temp);
+    }
 
-
-    public void outOfGarage(Car c){
-        this.cars.remove(c);
+    public int countCarsPerBrand(String brand){
+        int count = 0;
+        for(Car c : cars){
+            if(c.getBrand().toLowerCase().contains(brand.toLowerCase())){
+                count++;
+            }
+        }
+        return count;
     }
 
     public static void main(String[] args){
-        Garage g = new Garage("test", "Ergens 5", 1);
-         Car n = new Car("hiyth", "Aixam", "Pearl white");
-        // Car gu = new Car("hg505t", "Ford", "Zwart");
-        System.out.println(n.getLisencePlate());
-        //g.parkCar(n);
+        Garage g = new Garage("test", "Ergens 5", 150);
+        Car n = new Car("hiyrth", "Aixam", "Pearl white");
+        Car gu = new Car("hg505t", "Ford", "Zwart");
+        Car ty = new Car("kihyng", "Ford", "Blue");
+        //System.out.println(n.getLisencePlate());
+        System.out.println(g.parkCar(gu));
         // System.out.println(g.parkCar(gu));
         // System.out.println(g.countWhiteCars());
         // g.outOfGarage(gu);
         // System.out.println(g.cars.size());
        //System.out.println(g.validatePlate("xx-yy-xx"));
        System.out.println(g.parkCar(n));
+       System.out.println(g.parkCar(ty));
+       System.out.println(g.countCarsPerBrand("Ford"));
+       g.outOfGarage(gu.getLisencePlate());
+       System.out.println(g.countCarsPerBrand("Ford"));
+
  
 
 
