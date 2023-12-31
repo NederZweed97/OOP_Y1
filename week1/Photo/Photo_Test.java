@@ -28,6 +28,20 @@ public class Photo_Test {
         String result = foto.canPrint();
         assertEquals("printbaar", result);
     }
+    @Test
+    public void isGroupPhoto(){
+        foto.addPeople("Miron");
+        foto.addPeople("Jonathan");
+        foto.addPeople("axel");
+        foto.isGroupPhoto();
+        assertEquals("Ja, dit is een groepsfoto", "Ja, dit is een groepsfoto");
+    }
+    @Test
+    public void notAGroupPhoto(){
+        foto.addPeople("myself");
+        foto.isGroupPhoto();
+        assertEquals("Nee, dit is geen groepsfoto", "Nee, dit is geen groepsfoto");
+    }
 
 
 
