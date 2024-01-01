@@ -81,7 +81,7 @@ public class Garage {
         Car temp = null;
         for(Car c : cars){
             if(lp.equals(c.getLisencePlate())){
-                System.out.println("Match");
+                //System.out.println("Match");
                 temp = c;
             }
         }
