@@ -25,4 +25,11 @@ public class Cat_Test {
         String result = Saar.callCat();
         assertEquals("Kom eens hier, Duuk", result);
     }
+    @Test
+    public void petCat(){
+        Saar.adoptCat(duuk);
+        Saar.petCat();
+        Double result = this.duuk.getHappinessLevel();
+        assertEquals(4.0, result);
+    }
 }
