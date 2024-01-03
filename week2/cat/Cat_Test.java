@@ -19,4 +19,10 @@ public class Cat_Test {
         Boolean result = Saar.getCat() != null;
         assertEquals(true, result);
     }
+    @Test
+    public void callCat(){
+        Saar.adoptCat(duuk);
+        String result = Saar.callCat();
+        assertEquals("Kom eens hier, Duuk", result);
+    }
 }
