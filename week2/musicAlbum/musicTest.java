@@ -2,6 +2,9 @@ package week2.musicAlbum;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import java.util.ArrayList;
+import java.util.List;
+
 public class musicTest {
 private Song songa;
 private Song songb;
@@ -44,6 +47,41 @@ private Album albuma;
         String result = albuma.mostPLayed();
         assertEquals("C", result);
     }
+    @Test
+    public void correctAlbumLenght(){
+        int result = albuma.getAlbumLenght();
+        assertEquals(615, result);
+    }
+    @Test
+    public void wrongAlbumLenght(){
+        int result = albuma.getAlbumLenght();
+        assertNotEquals(250, result);
+    }
+    @Test
+    public void correctRoadTripWorthy(){
+        String result = albuma.roadtripWorthy();
+        assertEquals("he jammer, niet lang genoeg", result);
+    }
+    @Test
+    public void incorrectRoadTripWorthy(){
+        //in this test assertNotEquals is used to validate the previous test above
+        String result = albuma.roadtripWorthy();
+        assertNotEquals("Put it on a USB stick, we're going on a roadtrip!", result);
+    }
+    @Test
+    public void correctFindThatSong(){
+        List<String> result = new ArrayList<>();
+        result = albuma.findThatSong("C");
+        assertEquals(1, result.size());
+    }
+    @Test
+    public void noSongsFound(){
+        List<String> result = new ArrayList<>();
+        result = albuma.findThatSong("Fast");
+        assertEquals(0, result.size());
+    }
+
+
 
 
 
