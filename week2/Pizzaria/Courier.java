@@ -1,17 +1,17 @@
 package week2.Pizzaria;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class Courier {
     private String name;
     private int age;
     private double salary;
-    private List<Route> routes = new ArrayList<>();
+
     
 
-    public Courier(String name ,int age){
+    public Courier(String name ,int day, int month, int year){
         this.name = name;
-        this.age = age;
+        this.age = Period.between(LocalDate.of(year, month, day), LocalDate.now()).getYears();
         this.salary = setSalary();
     }
 
@@ -33,9 +33,7 @@ public class Courier {
     public double setSalary() {
         return (age >= 6 && age <= 19) ? 4.0 : (age >= 20 && age <= 21) ? 4.75 : 5.25;
     }
-    public void addRoute(Route r){
-        routes.add(r);
-    }
+
 
     
 }

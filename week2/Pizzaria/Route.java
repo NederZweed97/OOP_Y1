@@ -45,7 +45,7 @@ public class Route {
     public double profitFromRoute(){
         double p = 0;
         p += (totalPizzaRevenue() - costTotalRoute()) - courier.getSalary();
-        return p;
+        return Math.floor(p * 100)/100; //returns the profit with 2 decimals.
     }
 
 
