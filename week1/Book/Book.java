@@ -1,3 +1,5 @@
+package week1.Book;
+
 public class Book{
     private String title;
     private String author;
@@ -35,7 +37,7 @@ public class Book{
     public double getPrice(){
         return this.price;
     }
-    public void setprice(double price){
+    public void setPrice(double price){
         this.price = price;
     }
     public int getPages(){
@@ -61,7 +63,7 @@ public class Book{
         return time;
     }
 
-    public String getReadingLimit(){
+    public String getReadingAdvice(){
         double time = getReadingTime();
         if(time <= 79){
             return "Dit kan je prima lezen";
@@ -77,7 +79,7 @@ public class Book{
         Book boek = new Book("test", "Someone", false, 9.45, 150);
         System.out.println(boek.getTitle());
         System.out.println(boek.getReadingTime());
-        System.out.println(boek.getReadingLimit());
+        System.out.println(boek.getReadingAdvice());
         System.out.println(boek.upReadCount());
     }
 }
