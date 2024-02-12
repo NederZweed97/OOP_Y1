@@ -1,3 +1,5 @@
+package week1.Book;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +22,7 @@ class BookTest
     }
     @Test
     void ReadingLimitTest(){
-        assertEquals("Dit kun je beter niet meer gaan lezen", boek.getReadingLimit());
+        assertEquals("Dit kun je beter niet meer gaan lezen", boek.getReadingAdvice());
     }
 
 }

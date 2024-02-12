@@ -23,7 +23,7 @@ private Album albuma;
         albuma.addSong(songc);
     }
     @Test
-    public void amountOfSong(){
+    public void IsCoorectAmountOfSong(){
         int result = albuma.getTrackList().size();
         assertEquals(3,result);
     }
@@ -44,11 +44,11 @@ private Album albuma;
         songa.setPlayCount(5);
         songb.setPlayCount(2);
         songc.setPlayCount(15);
-        String result = albuma.mostPLayed();
+        String result = albuma.getMostPLayed();
         assertEquals("C", result);
     }
     @Test
-    public void correctAlbumLenght(){
+    public void correctAlbumLength(){
         int result = albuma.getAlbumLenght();
         assertEquals(615, result);
     }
@@ -58,14 +58,14 @@ private Album albuma;
         assertNotEquals(250, result);
     }
     @Test
-    public void correctRoadTripWorthy(){
-        String result = albuma.roadtripWorthy();
+    public void correctRoadTripWorthyt(){
+        String result = albuma.getRoadtripWorthy();
         assertEquals("he jammer, niet lang genoeg", result);
     }
     @Test
     public void incorrectRoadTripWorthy(){
         //in this test assertNotEquals is used to validate the previous test above
-        String result = albuma.roadtripWorthy();
+        String result = albuma.getRoadtripWorthy();
         assertNotEquals("Put it on a USB stick, we're going on a roadtrip!", result);
     }
     @Test

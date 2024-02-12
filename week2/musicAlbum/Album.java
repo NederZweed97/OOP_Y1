@@ -35,7 +35,7 @@ public class Album {
         trackList.get(index).playSong();
     }
 
-    public String mostPLayed(){
+    public String getMostPLayed(){
         Song most = trackList.get(0);
 
         for(Song s : trackList){
@@ -53,7 +53,7 @@ public class Album {
         }
         return lenght;
     }
-    public String roadtripWorthy(){
+    public String getRoadtripWorthy(){
         int t = getAlbumLenght() / 60;
         if(t > 60){
             return "Put it on a USB stick, we're going on a roadtrip!";

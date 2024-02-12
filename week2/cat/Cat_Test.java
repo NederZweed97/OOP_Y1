@@ -14,7 +14,7 @@ public class Cat_Test {
         this.Saar = new Owner();
     }
     @Test
-    public void adopCat(){
+    public void adoptCat(){
         Saar.adoptCat(duuk);
         Boolean result = Saar.getCat() != null;
         assertEquals(true, result);

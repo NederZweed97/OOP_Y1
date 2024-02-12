@@ -28,7 +28,7 @@ public class PizzariaTest {
 
     @Test
     public void pizzaPrice(){
-        int result = orderA.price();
+        int result = orderA.getPrice();
         assertEquals(10, result);
     }
     @Test

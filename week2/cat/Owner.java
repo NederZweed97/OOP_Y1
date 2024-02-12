@@ -27,7 +27,7 @@ public class Owner {
         
     }
 
-    public String hisCatHappy(){
+    public String isCatHappy(){
         if(this.cat == null){
             return "Kat houdt dat liever prive";
         }

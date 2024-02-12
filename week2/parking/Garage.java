@@ -56,7 +56,7 @@ public class Garage {
     }
 
     public String parkCar(Car c){
-        if(validatePlate(c.getLisencePlate())){
+        if(validatePlate(c.getLicencePlate())){
             if(this.cars.size() < getMaxCapacity()){
                 if(c.getColor().toLowerCase().contains("white")){
                     if(countWhiteCars() < 41){
@@ -80,7 +80,7 @@ public class Garage {
     public void outOfGarage(String lp){
         Car temp = null;
         for(Car c : cars){
-            if(lp.equals(c.getLisencePlate())){
+            if(lp.equals(c.getLicencePlate())){
                 //System.out.println("Match");
                 temp = c;
             }
@@ -113,7 +113,7 @@ public class Garage {
        System.out.println(g.parkCar(n));
        System.out.println(g.parkCar(ty));
        System.out.println(g.countCarsPerBrand("Ford"));
-       g.outOfGarage(gu.getLisencePlate());
+       g.outOfGarage(gu.getLicencePlate());
        System.out.println(g.countCarsPerBrand("Ford"));
 
  

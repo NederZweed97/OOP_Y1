@@ -10,9 +10,9 @@ public class Main {
         saar.adoptCat(duuk);
         System.out.println(saar.petCat());
         frank.petUnknownCat(duuk);
-        System.out.println(saar.happinessCheck());
+        System.out.println(saar.isCatHappy());
         System.out.println(saar.petCat());
-        System.out.println(saar.happinessCheck());
+        System.out.println(saar.isCatHappy());
     }
 
 }

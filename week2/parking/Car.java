@@ -11,7 +11,7 @@ public class Car {
         this.color = color;
     }
 
-    public String getLisencePlate() {
+    public String getLicencePlate() {
         return lisencePlate;
     }
     public String setLicensePlate(String licensePlate) {
