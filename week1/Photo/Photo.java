@@ -13,7 +13,7 @@ public class Photo {
         this.height = height;
         this.width = width;
         this.description = description;
-        this.dpi = calculateDPI(diagonalCm);
+        this.dpi = setDPI(diagonalCm);
     }
 
     public int getHeight() {
@@ -40,13 +40,10 @@ public class Photo {
     public int getDpi() {
         return dpi;
     }
-    public void setDpi(int dpi) {
-        this.dpi = dpi;
-    }
-    public int calculateDPI(double diagonal){
+    public int setDPI(double diagonal){
         return (int) Math.round(Math.sqrt(Math.pow(getHeight(), 2) + Math.pow(getWidth(), 2)) / (diagonal / 2.54));
     }
-    public String canPrint(){
+    public String isPrintable(){
         if(getHeight() >= 585 && getWidth() >= 878 && getDpi() >= 150){
             return "printbaar";
         }
@@ -78,7 +75,7 @@ public class Photo {
     test.addPeople("kleine");
     test.getNamesOnList();
     System.out.println(test.isGroupPhoto());
-    System.out.println(test.canPrint());
+    System.out.println(test.isPrintable());
     }
     
 

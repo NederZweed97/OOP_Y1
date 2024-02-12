@@ -12,20 +12,20 @@ public class Photo_Test {
     /*Okej, ik weet serieus niet war voor test cases ik verder rmoet maken*/
     @Test
     public void getDPIValue(){
-        int result = foto.calculateDPI(18);
+        int result = foto.setDPI(18);
         assertEquals(127, result);
     }
     @Test
     public void cannotPrint(){
-        String result = foto.canPrint();
+        String result = foto.isPrintable();
         assertEquals("niet printbaar", result);
     }
     @Test
     public void canPrint(){
         foto.setHeight(585);
         foto.setWidth(878);
-        foto.setDpi(foto.calculateDPI(17));
-        String result = foto.canPrint();
+        foto.setDPI(17);
+        String result = foto.isPrintable();
         assertEquals("printbaar", result);
     }
     @Test
@@ -33,14 +33,14 @@ public class Photo_Test {
         foto.addPeople("Miron");
         foto.addPeople("Jonathan");
         foto.addPeople("axel");
-        foto.isGroupPhoto();
-        assertEquals("Ja, dit is een groepsfoto", "Ja, dit is een groepsfoto");
+        String result = foto.isGroupPhoto();
+        assertEquals("Ja, dit is een groepsfoto", result);
     }
     @Test
     public void notAGroupPhoto(){
         foto.addPeople("myself");
-        foto.isGroupPhoto();
-        assertEquals("Nee, dit is geen groepsfoto", "Nee, dit is geen groepsfoto");
+        String result = foto.isGroupPhoto();
+        assertEquals("Nee, dit is geen groepsfoto", result);
     }
 
 
