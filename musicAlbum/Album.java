@@ -1,4 +1,4 @@
-package week2.musicAlbum;
+package musicAlbum;
 import java.util.ArrayList;
 import java.util.List;
 

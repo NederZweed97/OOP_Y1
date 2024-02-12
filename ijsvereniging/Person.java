@@ -1,4 +1,4 @@
-package week2.ijsvereniging;
+package ijsvereniging;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -7,9 +7,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
-    private int year;
-    private int day;
-    private int month;
+
 
 
     public Person(String firstName, String lastName, int year, int month, int day) {
@@ -18,7 +16,7 @@ public class Person {
         this.dateOfBirth= LocalDate.of(year, month, day);
     }
 
-    public String geFirstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 

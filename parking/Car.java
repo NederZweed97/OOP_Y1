@@ -1,4 +1,4 @@
-package week2.parking;
+package parking;
 
 public class Car {
     private String lisencePlate;

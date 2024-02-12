@@ -1,4 +1,4 @@
-package week2.Pizzaria;
+package Pizzaria;
 import java.time.LocalDate;
 import java.time.Period;
 

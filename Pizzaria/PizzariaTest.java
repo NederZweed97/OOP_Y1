@@ -1,4 +1,4 @@
-package week2.Pizzaria;
+package Pizzaria;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;

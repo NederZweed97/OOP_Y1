@@ -1,4 +1,4 @@
-package week2.musicAlbum;
+package musicAlbum;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;

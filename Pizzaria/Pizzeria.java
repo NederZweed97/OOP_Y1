@@ -1,4 +1,4 @@
-package week2.Pizzaria;
+package Pizzaria;
 import java.util.ArrayList;
 import java.util.List;
 public class Pizzeria {

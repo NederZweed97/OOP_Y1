@@ -1,4 +1,4 @@
-package week2.Pizzaria;
+package Pizzaria;
 
 public class Order {
     private String name;

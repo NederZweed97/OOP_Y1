@@ -1,4 +1,4 @@
-package week2.parking;
+package parking;
 import java.util.List;
 import java.util.ArrayList;
 
