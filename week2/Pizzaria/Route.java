@@ -38,7 +38,7 @@ public class Route {
     public int totalPizzaRevenue(){
         int total = 0;
         for(Order o : orders){
-            total += o.price();
+            total += o.getPrice();
         }
         return total;
     }

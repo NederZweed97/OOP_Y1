@@ -31,7 +31,7 @@ public class Courier {
         return salary;
     }
     public double setSalary() {
-        return (age >= 6 && age <= 19) ? 4.0 : (age >= 20 && age <= 21) ? 4.75 : 5.25;
+        return (age >= 16 && age <= 19) ? 4.0 : (age >= 20 && age <= 21) ? 4.75 : 5.25;
     }
 
 

@@ -39,7 +39,7 @@ public class Order {
         this.distanceFromlast = distanceFromlast;
     }
 
-    public int price(){
+    public int getPrice(){
         return this.getNumPizzas() * 5;
     }
 
