@@ -27,11 +27,11 @@ public class Owner {
         
     }
 
-    public String happinessCheck(){
+    public String hisCatHappy(){
         if(this.cat == null){
             return "Kat houdt dat liever prive";
         }
-        return this.cat.checkhHappiness();
+        return this.cat.isHappy();
         
     }
 

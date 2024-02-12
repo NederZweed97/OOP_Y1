@@ -34,7 +34,7 @@ public class Cat {
         } 
     }
     //bij de return wordt Math round gebruikt omdat na aan aantal keer aaien het een float wordt. hiermee wordt het afgerond naar 1 decimaal.
-    public String checkhHappiness(){
+    public String isHappy(){
         if(getHappinessLevel() <= 0.0 && getHappinessLevel() >= 3.5){
             return Math.round(getHappinessLevel() * 10.0) / 10.0 + ": " + getName() + " is ontvreden";
         } else if(getHappinessLevel() >= 3.6 && getHappinessLevel() <= 5.0){
